@@ -48,7 +48,7 @@ def configure_db(db_uri, mysql_host=None, mysql_user=None, mysql_password=None, 
     elif db_uri == MYSQL:
         if not all([mysql_host, mysql_user, mysql_password, mysql_db]):
             st.error("Please provide all MySQL connection details.")
-            st.stop()
+            st.stop() 
         engine = create_engine(f"mysql+pymysql://{mysql_user}:{mysql_password}@{mysql_host}/{mysql_db}")
         return SQLDatabase.from_uri(engine.url)
     
